@@ -1,5 +1,6 @@
 import { type Data } from '../App'
 import EmptyImg from '../assets/images/illustration-empty.svg?react'
+import './result.scss'
 
 interface ResultProps {
   data: Data | null;
@@ -19,12 +20,19 @@ const formatCurrency = (value: number) => {
     }).format(value);
 };
 
+const checkDataValid = (data: Data) => {
+    if (data && data.amount && data.rate && data.term && data.type) {
+        return true;
+    }
+    return false;
+}
+
 const Result = ({ data }: ResultProps) => {
     const finalPayment: FinalPayment = {
         monthly: null,
         total: null
     }
-    if (data) {
+    if (data && checkDataValid(data)) {
         const finalRate = data.rate / 100 / 12;
         const finalTerm = data.term * 12;
         if (data.type === 'repayment') {
@@ -38,15 +46,7 @@ const Result = ({ data }: ResultProps) => {
     }
     return (
         <div>
-            {!data ? (
-                <div>
-                    <EmptyImg/>
-                    <h2>Results shown here</h2>
-                    <p>
-                        Complete the form and click “calculate repayments” to see what your monthly repayments would be.
-                    </p>
-                </div>
-            ):(
+            {data && finalPayment.monthly!==null && finalPayment.total!==null ? (
                 <div>
                     <h2>Your results</h2>
                     <p>
@@ -59,6 +59,14 @@ const Result = ({ data }: ResultProps) => {
                         {finalPayment.total && (<span>{formatCurrency(finalPayment.total)}</span>)}
                     </div>
 
+                </div>
+            ):(
+                <div>
+                    <EmptyImg/>
+                    <h2>Results shown here</h2>
+                    <p>
+                        Complete the form and click “calculate repayments” to see what your monthly repayments would be.
+                    </p>
                 </div>
             )}
         </div>

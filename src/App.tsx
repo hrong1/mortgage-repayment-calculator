@@ -14,13 +14,13 @@ export interface Data {
 function App() {
   const [submittedData, setSubmittedData] = useState<Data | null>(null);
 
-  const handleFormSubmit = (data: Data) => {
+  const formDataChange = (data: Data | null) => {
     setSubmittedData(data);
   };
 
   return (
     <main>
-      <DataInput submitForm={handleFormSubmit}/>
+      <DataInput formChange={formDataChange}/>
       <Result data={submittedData}/>
     </main>
   )
