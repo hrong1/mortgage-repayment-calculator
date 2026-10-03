@@ -1,0 +1,48 @@
+// color
+$color-primary-lime: hsl(61, 70%, 52%);
+$color-primary-red: hsl(4, 69%, 50%);
+$color-white: hsl(0, 0%, 100%);
+$color-slate-100: hsl(202, 86%, 94%);
+$color-slate-300: hsl(203, 41%, 72%);
+$color-slate-500: hsl(200, 26%, 54%);
+$color-slate-700: hsl(200, 24%, 40%);
+$color-slate-900: hsl(202, 55%, 16%);
+// font
+$font-main: "Rubik", sans-serif;
+$fs-base: 1rem;
+$fs-xxs: 0.5rem;
+$fs-xs: 0.625rem;
+$fs-sm: 0.875rem;
+$fs-lg: 1.25rem;
+$fs-xl: 1.5rem;
+$fs-xxl: 2rem;
+$fs-xxxl: 2.5rem;
+$font-bold: 700;
+$font-medium: 500;
+$font-normal: 400;
+$font-thin: 300;
+$letter-spacing: 0.1rem;
+$line-height-lg: 1.5rem;
+// spacing and margins
+$spacing-1: 0.25rem;
+$spacing-2: 0.5rem;
+$spacing-3: 1rem;
+$spacing-4: 1.5rem;
+$spacing-5: 2rem;
+$spacing-6: 3rem;
+// radius
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-pill: 50rem;
+$border-radius-circle: 50%;
+// animation
+$animation-time: 0.3s;
+// border
+$border-width: 2px;
+// opacity
+$default-opacity: 0.5;
+// width
+$toggle-size: 1rem;
+$section-width: 30rem;
+$desktop: 1200px;

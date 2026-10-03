@@ -53,9 +53,9 @@ const Result = ({ data }: ResultProps) => {
                         Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.
                     </p>
                     <div>
-                        <span>Your monthly repayments</span>
+                        <span>Your monthly repayments </span>
                         {finalPayment.monthly && (<span>{formatCurrency(finalPayment.monthly)}</span>)}
-                        <span>Total you'll repay over the term</span>
+                        <span>Total you'll repay over the term </span>
                         {finalPayment.total && (<span>{formatCurrency(finalPayment.total)}</span>)}
                     </div>
 
