@@ -36,70 +36,81 @@ const DataInput = ({ formChange }: DataInputProps) => {
             <section className="calculator__inputs">
                 <div className="calculator__group">
                     <label className="calculator__label" htmlFor="amount" >Mortgage Amount</label>
-                    <input 
-                        className="calculator__input"
-                        type="number"
-                        id="amount"
-                        step="0.01"
-                        autoComplete="off"
-                        {...register("amount", {
-                            required: {
-                                value: true, 
-                                message: errorEmpty
-                            },
-                            min: {
-                                value: 0.01,
-                                message: "number should larger than 0"
-                            },
-                            valueAsNumber: true
-                        })}
-                    />
+                    <div className="calculator__input-wrapper">
+                        <span className="calculator__prefix" aria-hidden="true">£</span>
+                        <input 
+                            className="calculator__input"
+                            type="number"
+                            id="amount"
+                            step="0.01"
+                            autoComplete="off"
+                            {...register("amount", {
+                                required: {
+                                    value: true, 
+                                    message: errorEmpty
+                                },
+                                min: {
+                                    value: 0.01,
+                                    message: "number should larger than 0"
+                                },
+                                valueAsNumber: true
+                            })}
+                        />
+                    </div>
+                    
                     {errors.amount && <span className="calculator__error">{errors.amount.message}</span>}
                 </div>
                 <div className="calculator__group">
                     <label className="calculator__label" htmlFor="term">Mortgage Term</label>
-                    <input
-                        className="calculator__input"
-                        type="number"
-                        id="term"
-                        min="0"
-                        step="0.01"
-                        autoComplete="off"
-                        {...register("term", {
-                            required: {
-                                value: true, 
-                                message: errorEmpty
-                            },
-                            min: {
-                                value: 0.01,
-                                message: "number should larger than 0"
-                            },
-                            valueAsNumber: true
-                        })}
-                    />
+                    <div className="calculator__input-wrapper">
+                        <input
+                            className="calculator__input"
+                            type="number"
+                            id="term"
+                            min="0"
+                            step="0.01"
+                            autoComplete="off"
+                            {...register("term", {
+                                required: {
+                                    value: true, 
+                                    message: errorEmpty
+                                },
+                                min: {
+                                    value: 0.01,
+                                    message: "number should larger than 0"
+                                },
+                                valueAsNumber: true
+                            })}
+                        />
+                        <span className="calculator__prefix" aria-hidden="true">years</span>
+                    </div>
                     {errors.term && <span className="calculator__error">{errors.term.message}</span>}
                 </div>
                 <div className="calculator__group">
                     <label className="calculator__label" htmlFor="rate">Interest Rate</label>
-                    <input
-                        className="calculator__input"
-                        type="number"
-                        id="rate"
-                        min="0"
-                        step="0.01"
-                        autoComplete="off"
-                        {...register("rate", {
-                            required: {
-                                value: true, 
-                                message: errorEmpty
-                            },
-                            min: {
-                                value: 0.01,
-                                message: "number should larger than 0"
-                            },
-                            valueAsNumber: true
-                        })}
-                    />
+                    <div className="calculator__input-wrapper">
+                        <input
+                            className="calculator__input"
+                            type="number"
+                            id="rate"
+                            min="0"
+                            step="0.01"
+                            autoComplete="off"
+                            {...register("rate", {
+                                required: {
+                                    value: true, 
+                                    message: errorEmpty
+                                },
+                                min: {
+                                    value: 0.01,
+                                    message: "number should larger than 0"
+                                },
+                                valueAsNumber: true
+                            })}
+                        />
+                        <span className="calculator__prefix" aria-hidden="true">%</span>
+                    </div>
+                    
                     {errors.rate && <span className="calculator__error">{errors.rate.message}</span>}
                 </div>
             </section>

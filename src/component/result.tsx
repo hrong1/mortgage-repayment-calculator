@@ -45,9 +45,9 @@ const Result = ({ data }: ResultProps) => {
         }
     }
     return (
-        <div>
+        <div className="result">
             {data && finalPayment.monthly!==null && finalPayment.total!==null ? (
-                <div>
+                <div className="result__info">
                     <h2>Your results</h2>
                     <p>
                         Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.
@@ -61,7 +61,7 @@ const Result = ({ data }: ResultProps) => {
 
                 </div>
             ):(
-                <div>
+                <div className="result__empty">
                     <EmptyImg/>
                     <h2>Results shown here</h2>
                     <p>

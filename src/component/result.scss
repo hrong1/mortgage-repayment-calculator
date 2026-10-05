@@ -1,0 +1,9 @@
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+    background-color: $color-slate-900;
+    height: 100%;
+    border-bottom-left-radius: $border-radius-lg;
+    padding: $spacing-3;
+}

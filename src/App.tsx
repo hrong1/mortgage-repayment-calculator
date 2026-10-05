@@ -19,7 +19,7 @@ function App() {
   };
 
   return (
-    <main>
+    <main className="mortgageCalculator">
       <DataInput formChange={formDataChange}/>
       <Result data={submittedData}/>
     </main>
