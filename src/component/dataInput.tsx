@@ -116,7 +116,7 @@ const DataInput = ({ formChange }: DataInputProps) => {
             </section>
             <fieldset className="calculator__types">
                 <legend className="calculator__legend">Mortgage Type</legend>
-                <div className="calculator__radio-group">
+                <label className="calculator__radio-group" htmlFor="repayment">
                     <input 
                         className="calculator__radio"
                         type="radio" 
@@ -126,10 +126,11 @@ const DataInput = ({ formChange }: DataInputProps) => {
                             required: errorEmpty
                         })}
                     />
-                    <label className="calculator__radio-label" htmlFor="repayment">Repayment</label>
-                </div>
+                    <span className="calculator__radio-mark"></span>
+                    <span className="calculator__radio-text" >Repayment</span>
+                </label>
 
-                <div className="calculator__radio-group">
+                <label className="calculator__radio-group" htmlFor="interest">
                     <input 
                         className="calculator__radio"
                         type="radio" 
@@ -139,8 +140,9 @@ const DataInput = ({ formChange }: DataInputProps) => {
                             required: errorEmpty,
                         })}
                     />
-                    <label className="calculator__radio-label" htmlFor="interest">Interest Only</label>
-                </div>
+                    <span className="calculator__radio-mark"></span>
+                    <span className="calculator__radio-text" >Interest Only</span>
+                </label>
                 {errors.type && <span className="calculator__error">{errors.type.message}</span>}
             </fieldset>
             <button className="calculator__btn-submit" type='submit' disabled={isSubmitting}>

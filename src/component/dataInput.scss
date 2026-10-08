@@ -11,7 +11,8 @@
     }
 
     &__title {
-        color: $color-slate-900;
+        color: $color-slate-700;
+        font-size: $fs-lg;
     }
 
     &__clear-btn {
@@ -29,7 +30,7 @@
         justify-content: center;
         align-items: center;
         grid-template-columns: 1fr 1fr;
-        gap: $spacing-2;
+        gap: $spacing-3;
     }
 
     &__inputs > :first-child {
@@ -45,6 +46,7 @@
 
     &__label {
         color: $color-slate-500;
+        font-size: $fs-sm;
     }
 
     &__input-wrapper {
@@ -94,4 +96,73 @@
         }
     }
 
+    &__error{
+        color: $color-red;
+        font-size: $fs-sm;
+    }
+
+    &__types{
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: $spacing-2;
+    }
+
+    &__legend{
+        color: $color-slate-500;
+        font-size: $fs-sm;
+        margin-bottom: $spacing-2;
+    }
+
+    &__radio-group{
+        padding: $spacing-2;
+        border: 1px solid $color-slate-700;
+        border-radius: $border-radius-md;
+        display: flex; 
+        cursor: pointer;
+        gap: $spacing-3;
+        align-items: center;
+    }
+
+    &__radio {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    &__radio-mark {
+        position: relative;
+        display: inline-block;
+        width: $spacing-3;
+        height: $spacing-3;
+        border: 1px solid $color-slate-700;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+    }
+
+    &__radio-text{
+        font-weight: $font-bold;
+        color: $color-slate-900;
+        font-size: $fs-sm;
+    }
+
+    &__btn-submit {
+        font: inherit;
+        display: flex;
+        width: fit-content;
+        align-items: center;
+        padding: $spacing-2 $spacing-3;
+        gap: $spacing-2;
+        font-weight: $font-bold;
+        font-size: $fs-sm;
+        border-radius: $border-radius-pill;
+        border: none;
+        background-color: $color-lime;
+        cursor: pointer;
+        &:hover{
+            background-color:  change-color($color-lime, $alpha: 0.7);
+        }
+    }
 }
