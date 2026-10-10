@@ -48,15 +48,15 @@ const Result = ({ data }: ResultProps) => {
         <div className="result">
             {data && finalPayment.monthly!==null && finalPayment.total!==null ? (
                 <div className="result__info">
-                    <h2>Your results</h2>
-                    <p>
+                    <h2 className="result__info--title">Your results</h2>
+                    <p className="result__info--words">
                         Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.
                     </p>
-                    <div>
-                        <span>Your monthly repayments </span>
-                        {finalPayment.monthly && (<span>{formatCurrency(finalPayment.monthly)}</span>)}
-                        <span>Total you'll repay over the term </span>
-                        {finalPayment.total && (<span>{formatCurrency(finalPayment.total)}</span>)}
+                    <div className="result__data">
+                        <span className="result__data--monthly">Your monthly repayments </span>
+                        {finalPayment.monthly && (<span className="result__data--monthlyData">{formatCurrency(finalPayment.monthly)}</span>)}
+                        <span className="result__data--total">Total you'll repay over the term </span>
+                        {finalPayment.total && (<span className="result__data--totalData">{formatCurrency(finalPayment.total)}</span>)}
                     </div>
 
                 </div>

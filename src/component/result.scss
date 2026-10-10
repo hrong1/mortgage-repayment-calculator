@@ -5,9 +5,10 @@
     background-color: $color-slate-900;
     height: 100%;
     border-bottom-left-radius: $border-radius-lg * 6;
-    padding: $spacing-3;
+    padding: $spacing-5;
     align-content: center;
     justify-content: center;
+    overflow: hidden;
 
     &__empty {
         display: flex;
@@ -27,6 +28,55 @@
         }
         &--words {
             color: $color-slate-500;
+            max-width: 45ch;
         }
     }
+    
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-4;
+        height: 100%;
+
+        &--title {
+            color: white;
+            font-size: $fs-base;
+        }
+
+        &--words {
+            color: $color-slate-500;
+            font-size: $fs-sm;
+            max-width: 45ch;
+        }
+    }
+
+    &__data {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        gap: $spacing-3;
+        padding: $spacing-3;
+        background-color: $color-dark-blue;
+        border-radius: $border-radius-md;
+        box-shadow: 0 -1 * $spacing-1 $color-lime;
+
+        &--monthly {
+            color: $color-slate-500;
+        }
+        &--total{
+            color: $color-slate-500;
+        }
+
+        &--monthlyData {
+            color: $color-lime;
+            font-size: $fs-xxxl;
+            font-weight: $font-bold;
+        }
+
+        &--totalData {
+            color: white;
+            font-size: $fs-lg;
+        }
+    }
+
 }
