@@ -12,11 +12,12 @@ const DataInput = ({ formChange }: DataInputProps) => {
     const errorEmpty = "This field is required";
     const [formKey, setFormKey] = useState(0);
     const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Data>({
+        mode: 'onChange',
         defaultValues: {
-            amount: undefined,
-            term: undefined,
-            rate: undefined,
-            type: undefined
+            amount: "" as any,
+            term: "" as any,
+            rate: "" as any,
+            type: "" as any
         },
     });
     const onSubmit: SubmitHandler<Data> = (data) => {
@@ -37,9 +38,9 @@ const DataInput = ({ formChange }: DataInputProps) => {
                 <div className="calculator__group">
                     <label className="calculator__label" htmlFor="amount" >Mortgage Amount</label>
                     <div className="calculator__input-wrapper">
-                        <span className="calculator__prefix" aria-hidden="true">£</span>
+                        <span className={`calculator__prefix ${errors.amount ? 'error' : ''}`} aria-hidden="true">£</span>
                         <input 
-                            className="calculator__input"
+                            className={`calculator__input ${errors.amount ? 'error' : ''}`}
                             type="number"
                             id="amount"
                             step="0.01"
@@ -64,7 +65,7 @@ const DataInput = ({ formChange }: DataInputProps) => {
                     <label className="calculator__label" htmlFor="term">Mortgage Term</label>
                     <div className="calculator__input-wrapper">
                         <input
-                            className="calculator__input"
+                            className={`calculator__input ${errors.term ? 'error' : ''}`}
                             type="number"
                             id="term"
                             min="0"
@@ -82,7 +83,7 @@ const DataInput = ({ formChange }: DataInputProps) => {
                                 valueAsNumber: true
                             })}
                         />
-                        <span className="calculator__prefix" aria-hidden="true">years</span>
+                        <span className={`calculator__prefix ${errors.term ? 'error' : ''}`} aria-hidden="true">years</span>
                     </div>
                     {errors.term && <span className="calculator__error">{errors.term.message}</span>}
                 </div>
@@ -90,7 +91,7 @@ const DataInput = ({ formChange }: DataInputProps) => {
                     <label className="calculator__label" htmlFor="rate">Interest Rate</label>
                     <div className="calculator__input-wrapper">
                         <input
-                            className="calculator__input"
+                            className={`calculator__input ${errors.rate ? 'error' : ''}`}
                             type="number"
                             id="rate"
                             min="0"
@@ -108,7 +109,7 @@ const DataInput = ({ formChange }: DataInputProps) => {
                                 valueAsNumber: true
                             })}
                         />
-                        <span className="calculator__prefix" aria-hidden="true">%</span>
+                        <span className={`calculator__prefix ${errors.rate ? 'error' : ''}`} aria-hidden="true">%</span>
                     </div>
                     
                     {errors.rate && <span className="calculator__error">{errors.rate.message}</span>}

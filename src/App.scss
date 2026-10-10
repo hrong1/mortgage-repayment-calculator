@@ -6,14 +6,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .mortgageCalculator {
     display: grid;
+    overflow: hidden;
     grid-template-columns: 1fr 1fr;
     gap: $spacing-3;
     justify-content: center;
     align-items: center;
     background-color: $color-white;
     border-radius: $border-radius-md; 
+    max-width: 80%;
+    justify-self: center;
 }

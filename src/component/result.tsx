@@ -62,9 +62,9 @@ const Result = ({ data }: ResultProps) => {
                 </div>
             ):(
                 <div className="result__empty">
-                    <EmptyImg/>
-                    <h2>Results shown here</h2>
-                    <p>
+                    <EmptyImg className="result__empty--svg"/>
+                    <h2 className="result__empty--title">Results shown here</h2>
+                    <p className="result__empty--words">
                         Complete the form and click “calculate repayments” to see what your monthly repayments would be.
                     </p>
                 </div>

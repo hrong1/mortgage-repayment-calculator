@@ -4,6 +4,29 @@
     gap: $spacing-2;
     background-color: $color-slate-900;
     height: 100%;
-    border-bottom-left-radius: $border-radius-lg;
+    border-bottom-left-radius: $border-radius-lg * 6;
     padding: $spacing-3;
+    align-content: center;
+    justify-content: center;
+
+    &__empty {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        gap: $spacing-2;
+
+        &--svg {
+            display: block;
+            margin: 0 auto;
+        }
+
+        &--title {
+            color: white;
+        }
+        &--words {
+            color: $color-slate-500;
+        }
+    }
 }

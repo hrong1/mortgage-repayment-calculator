@@ -43,6 +43,10 @@
         justify-content: center;
         gap: $spacing-2;
     }
+    &__group:focus-within &__prefix {
+        background-color: $color-lime;
+        color: $color-slate-700;
+    }
 
     &__label {
         color: $color-slate-500;
@@ -71,10 +75,15 @@
         border-radius: $border-radius-sm;
         right: 0;
         z-index: 0;
+        transition: transform $animation-time ease-in-out;
         &:first-child {
             left: 0;
             max-width: fit-content;
             padding: $spacing-3;
+        }
+        &.error {
+            background-color: red;
+            color: white;
         }
     }
 
@@ -91,8 +100,20 @@
         &:nth-child(2) {
             padding: $spacing-2 $spacing-3 $spacing-2 $spacing-6;
         }
-        &:focus {
+        &:hover {
             outline: 1px solid $color-slate-500;
+        }
+        &:focus {
+            outline: none;
+            border-color: $color-lime;
+        }
+
+        &.error {
+            border-color: red;
+
+            &:focus{
+                outline: 1px solid red;
+            }
         }
     }
 
@@ -124,6 +145,9 @@
         cursor: pointer;
         gap: $spacing-3;
         align-items: center;
+        &:hover {
+            border-color: $color-lime;
+        }
     }
 
     &__radio {
