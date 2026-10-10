@@ -44,7 +44,7 @@
         }
 
         &--words {
-            color: $color-slate-500;
+            color: $color-slate-300;
             font-size: $fs-sm;
             max-width: 45ch;
         }
@@ -61,10 +61,10 @@
         box-shadow: 0 -1 * $spacing-1 $color-lime;
 
         &--monthly {
-            color: $color-slate-500;
+            color: $color-slate-300;
         }
         &--total{
-            color: $color-slate-500;
+            color: $color-slate-300;
         }
 
         &--monthlyData {
@@ -79,4 +79,12 @@
         }
     }
 
+
+}
+
+@media (max-width: $desktop) {
+
+    .result {
+        border-bottom-left-radius: 0;
+    }
 }

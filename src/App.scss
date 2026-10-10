@@ -20,3 +20,17 @@ body {
     border-radius: $border-radius-md; 
     justify-self: center;
 }
+
+
+@media (max-width: $desktop) {
+
+    body {
+        background-color: white;
+    }
+
+    .mortgageCalculator {
+        grid-template-columns: 1fr;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+}
