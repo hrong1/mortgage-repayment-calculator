@@ -119,6 +119,7 @@
         padding: $spacing-2;
         border: 1px solid $color-slate-700;
         border-radius: $border-radius-md;
+        background-color: transparent;
         display: flex; 
         cursor: pointer;
         gap: $spacing-3;
@@ -139,7 +140,32 @@
         height: $spacing-3;
         border: 1px solid $color-slate-700;
         border-radius: 50%;
-        transition: all 0.2s ease;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: $spacing-2 + 0.1rem;
+            height: $spacing-2 + 0.1rem;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            background-color: $color-lime;
+            transition: transform $animation-time ease-in-out;
+        }
+    }
+
+    &__radio:checked + &__radio-mark{
+        border-color: $color-lime;
+        background-color: change-color($color-lime, $alpha: 0.5);
+    }
+
+    &__radio-group:has(input[type="radio"]:checked){
+        border-color: $color-lime;
+        background-color: change-color($color-lime, $alpha: 0.3);
+    }
+
+    &__radio:checked + &__radio-mark::after {
+        transform: translate(-50%, -50%) scale(1);
     }
 
     &__radio-text{
